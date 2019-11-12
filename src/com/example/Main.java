@@ -5,7 +5,7 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
 //        File file = new File("/Users/thienle/Documents/FileIO/FileFolder/");
 //        String[] fileList = file.list();
 //        for (String name : fileList) {
