@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FileIO.iml" filepath="$PROJECT_DIR$/FileIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SpringBootWarPackage/SpringBootWeb2/SpringBootWeb.iml" filepath="$PROJECT_DIR$/../SpringBootWarPackage/SpringBootWeb2/SpringBootWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../spring-boot-basic/value/value.iml" filepath="$PROJECT_DIR$/../spring-boot-basic/value/value.iml" />
     </modules>
   </component>
 </project>
