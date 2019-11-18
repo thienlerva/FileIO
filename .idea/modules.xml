@@ -4,6 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FileIO.iml" filepath="$PROJECT_DIR$/FileIO.iml" />
       <module fileurl="file://$PROJECT_DIR$/../SpringBootWarPackage/SpringBootWeb2/SpringBootWeb.iml" filepath="$PROJECT_DIR$/../SpringBootWarPackage/SpringBootWeb2/SpringBootWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebSocket-SpringBoot/complete/gs-messaging-stomp-websocket.iml" filepath="$PROJECT_DIR$/../WebSocket-SpringBoot/complete/gs-messaging-stomp-websocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../h2dbSpringboot/h2db/h2db.iml" filepath="$PROJECT_DIR$/../h2dbSpringboot/h2db/h2db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Rabbitmq-tutorial/complete/messaging-rabbitmq.iml" filepath="$PROJECT_DIR$/../Rabbitmq-tutorial/complete/messaging-rabbitmq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../spring-basic-security/spring-basic-security.iml" filepath="$PROJECT_DIR$/../spring-basic-security/spring-basic-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/../spring-boot-basic/value/value.iml" filepath="$PROJECT_DIR$/../spring-boot-basic/value/value.iml" />
     </modules>
   </component>

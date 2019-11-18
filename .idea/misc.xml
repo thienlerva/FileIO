@@ -6,6 +6,12 @@
         <option value="$PROJECT_DIR$/../war/pom.xml" />
         <option value="$PROJECT_DIR$/../SpringBootWarPackage/SpringBootWeb2/pom.xml" />
         <option value="$PROJECT_DIR$/../spring-boot-basic/value/pom.xml" />
+        <option value="$PROJECT_DIR$/../spring-basic-security/pom.xml" />
+        <option value="$PROJECT_DIR$/../h2dbSpringboot/h2db/pom.xml" />
+        <option value="$PROJECT_DIR$/../gs-messaging-rabbitmq-master/complete/pom.xml" />
+        <option value="$PROJECT_DIR$/../Rabbitmq-tutorial/complete/pom.xml" />
+        <option value="$PROJECT_DIR$/../WebSocket-SpringBoot/complete/pom.xml" />
+        <option value="$PROJECT_DIR$/../Trivia-Game/Trivia-Game-BackEnd/pom.xml" />
       </list>
     </option>
   </component>
