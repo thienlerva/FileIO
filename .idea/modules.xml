@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-receiver/ActiveMQ-receiver.iml" filepath="$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-receiver/ActiveMQ-receiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-sender/ActiveMQ-sender.iml" filepath="$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-sender/ActiveMQ-sender.iml" />
       <module fileurl="file://$PROJECT_DIR$/FileIO.iml" filepath="$PROJECT_DIR$/FileIO.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../SpringBootWarPackage/SpringBootWeb2/SpringBootWeb.iml" filepath="$PROJECT_DIR$/../SpringBootWarPackage/SpringBootWeb2/SpringBootWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RealTimeChatWebSocket/RealTimeChat/RealTimeChat.iml" filepath="$PROJECT_DIR$/../RealTimeChatWebSocket/RealTimeChat/RealTimeChat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Sonarqube/Sonarqube.iml" filepath="$PROJECT_DIR$/../Sonarqube/Sonarqube.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Testing/Testing.iml" filepath="$PROJECT_DIR$/../Testing/Testing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebSocket-MutiProjects/websocket_Feb_9_2020/WebSocket-backend/WebSocket-backend.iml" filepath="$PROJECT_DIR$/../WebSocket-MutiProjects/websocket_Feb_9_2020/WebSocket-backend/WebSocket-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../activemq-standalone/activemq-standalone.iml" filepath="$PROJECT_DIR$/../activemq-standalone/activemq-standalone.iml" />
       <module fileurl="file://$PROJECT_DIR$/../WebSocket-SpringBoot/complete/gs-messaging-stomp-websocket.iml" filepath="$PROJECT_DIR$/../WebSocket-SpringBoot/complete/gs-messaging-stomp-websocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/../h2dbSpringboot/h2db/h2db.iml" filepath="$PROJECT_DIR$/../h2dbSpringboot/h2db/h2db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jms-activemq/jms-activemq.iml" filepath="$PROJECT_DIR$/../jms-activemq/jms-activemq.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Rabbitmq-tutorial/complete/messaging-rabbitmq.iml" filepath="$PROJECT_DIR$/../Rabbitmq-tutorial/complete/messaging-rabbitmq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../spring-basic-security/spring-basic-security.iml" filepath="$PROJECT_DIR$/../spring-basic-security/spring-basic-security.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../spring-boot-basic/value/value.iml" filepath="$PROJECT_DIR$/../spring-boot-basic/value/value.iml" />
     </modules>
   </component>
 </project>

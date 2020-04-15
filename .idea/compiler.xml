@@ -6,34 +6,66 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ActiveMQ-receiver" />
+        <module name="ActiveMQ-sender" />
+        <module name="activemq-standalone" />
         <module name="gs-messaging-stomp-websocket" />
         <module name="h2db" />
+        <module name="jms-activemq" />
         <module name="messaging-rabbitmq" />
-        <module name="spring-basic-security" />
-        <module name="SpringBootWeb" />
-        <module name="value" />
+        <module name="RealTimeChat" />
+        <module name="Sonarqube" />
+        <module name="Testing" />
+        <module name="WebSocket-backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ActiveMQ-receiver" target="1.8" />
+      <module name="ActiveMQ-sender" target="1.8" />
+      <module name="activemq-standalone" target="1.8" />
+      <module name="Audit" target="1.8" />
+      <module name="Email" target="1.8" />
       <module name="gs-messaging-stomp-websocket" target="1.8" />
       <module name="h2db" target="1.8" />
+      <module name="jms-activemq" target="1.8" />
       <module name="messaging-rabbitmq" target="1.8" />
+      <module name="RealTimeChat" target="1.8" />
+      <module name="Sonarqube" target="1.8" />
       <module name="spring-basic-security" target="1.8" />
+      <module name="spring-boot-websocket" target="1.8" />
+      <module name="springboot-stomp-websocket" target="1.8" />
       <module name="SpringBootWeb" target="1.8" />
+      <module name="Testing" target="1.8" />
       <module name="TriviaTownesServer" target="1.8" />
+      <module name="TriviaTownesServer (1)" target="1.8" />
       <module name="value" target="1.8" />
       <module name="war" target="1.8" />
+      <module name="WebSocket-backend" target="1.8" />
+      <module name="websocket-message" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ActiveMQ-receiver" options="-parameters" />
+      <module name="ActiveMQ-sender" options="-parameters" />
+      <module name="Audit" options="-parameters" />
+      <module name="Email" options="-parameters" />
+      <module name="RealTimeChat" options="-parameters" />
+      <module name="Sonarqube" options="-parameters" />
       <module name="SpringBootWeb" options="-parameters" />
+      <module name="Testing" options="-parameters" />
+      <module name="WebSocket-backend" options="-parameters" />
+      <module name="activemq-standalone" options="-parameters" />
       <module name="gs-messaging-stomp-websocket" options="-parameters" />
       <module name="h2db" options="-parameters" />
+      <module name="jms-activemq" options="-parameters" />
       <module name="messaging-rabbitmq" options="-parameters" />
       <module name="spring-basic-security" options="-parameters" />
+      <module name="spring-boot-websocket" options="-parameters" />
+      <module name="springboot-stomp-websocket" options="-parameters" />
       <module name="value" options="-parameters" />
       <module name="war" options="-parameters" />
+      <module name="websocket-message" options="-parameters" />
     </option>
   </component>
 </project>
