@@ -51,7 +51,22 @@ public class Main {
 
         //byteArrayInputStream();
         dataInputStreamDemo();
-        dataInputStreamDemo2();
+        //dataInputStreamDemo2();
+
+        byte b = 110;
+        System.out.println("binay: " + (char) b);
+
+
+
+        List<Customer> customers = Customer.initializeCustomerData();
+
+        //DataOutputStream custOutput = Customer.createFile("customers.dat");
+
+        for(Customer person : customers) {
+            Customer.writeCustomerToFile(person, "customers.dat");
+        }
+
+        Customer.getFileInfo("customers.dat");
     }
 
     public static void byteArrayInputStream() {
@@ -97,6 +112,7 @@ public class Main {
             dout.writeInt(55);
             dout.writeBoolean(true);
             dout.writeChar('4');
+            dout.writeShort(10);
         } catch (FileNotFoundException ex) {
             System.out.println("Can't open output file");
 
@@ -113,7 +129,8 @@ public class Main {
             int b = din.readInt();
             boolean c = din.readBoolean();
             char d = din.readChar();
-            System.out.println("Values: " + a + " " + b + " " + c + " " + d);
+            short e = din.readShort();
+            System.out.println("Values: " + a + " " + b + " " + c + " " + d + " " + e);
         } catch (FileNotFoundException ex) {
             System.out.println("Cannot Open the Input file file.txt");
         } catch (IOException ex) {
@@ -245,6 +262,119 @@ public class Main {
         } catch (Exception e) {
 
             System.out.println(e.getMessage());
+        }
+    }
+
+    // inner class Customer
+    private static class Customer {
+        String custName;
+        int custAge;
+        double custDebt;
+        boolean oweMoney;
+        char custSex;
+
+        public Customer() {}
+
+        public Customer(String custName, int custAge, double custDebt, boolean oweMoney, char custSex) {
+            this.custName = custName;
+            this.custAge = custAge;
+            this.custDebt = custDebt;
+            this.oweMoney = oweMoney;
+            this.custSex = custSex;
+        }
+
+        private static List<Customer> initializeCustomerData() {
+            Customer[] customers = new Customer[5];
+
+            customers[0] = new Customer("John Smith", 21, 12.25, true, 'M');
+            customers[1] = new Customer("Sally Smith", 30, 2.25, true, 'F');
+            customers[2] = new Customer("Paul Ryan", 21, 0, false, 'M');
+            customers[3] = new Customer("Mark Jacobs", 21, 3.25, true, 'M');
+            customers[4] = new Customer("Steve Nash", 21, 5.25, true, 'M');
+
+            return Arrays.asList(customers);
+        }
+
+        // Create the file and DataOutputStream that will write to the file
+        private static DataOutputStream createFile(String fileName) {
+            File listOfNames = new File(fileName);
+
+            try (DataOutputStream infoToWrite = new DataOutputStream(
+                    new BufferedOutputStream(
+                            new FileOutputStream(listOfNames)
+                    )
+            )) {
+                return infoToWrite;
+            } catch (IOException e) {
+                System.out.println("An I/O Error Occurred");
+            }
+            return null;
+        }
+
+        // Create a string with the customer info and write it to the file
+        private static void createCustomerFile(Customer customer, DataOutputStream custOutput) {
+            try {
+                //write primitive data to the file
+                custOutput.writeUTF(customer.custName);
+                custOutput.writeInt(customer.custAge);
+                custOutput.writeDouble(customer.custDebt);
+                custOutput.writeBoolean(customer.oweMoney);
+                custOutput.writeChar(customer.custSex);
+            } catch (IOException e) {
+                System.out.println("An I/O Error occurred");
+            }
+        }
+
+        private static void writeCustomerToFile(Customer customer, String fileName) {
+            try (DataOutputStream write = new DataOutputStream(
+                    new BufferedOutputStream(
+                            new FileOutputStream(fileName, true)
+                    )
+            )) {
+                //write primitive data to the file
+                write.writeUTF(customer.custName);
+                write.writeInt(customer.custAge);
+                write.writeDouble(customer.custDebt);
+                write.writeBoolean(customer.oweMoney);
+                write.writeChar(customer.custSex);
+            } catch (FileNotFoundException e) {
+                System.out.println("File not found");
+            } catch (IOException e) {
+                System.out.println("I/O Error Occurred");
+            }
+        }
+
+        // Read info from the file and write it to the screen
+        private static void getFileInfo(String fileName) {
+            System.out.println("Info Writtten to File \n");
+
+            File listOfNames = new File(fileName);
+            boolean eof = false;
+
+            try ( DataInputStream getInfo = new DataInputStream(
+                    new BufferedInputStream(
+                            new FileInputStream(listOfNames)
+                    )
+            )){
+                while (!eof) {
+                    String name = getInfo.readUTF();
+                    int age = getInfo.readInt();
+                    double debt = getInfo.readDouble();
+                    boolean hasOwned = getInfo.readBoolean();
+                    char sex = getInfo.readChar();
+
+                    System.out.println(name + "\n" + age + "\n" + debt + "\n" + hasOwned + "\n" + sex + "\n");
+
+                }
+            } catch (EOFException e) {
+                System.out.println("End of file");
+
+
+            } catch (FileNotFoundException e) {
+                System.out.println("Could not file the file");
+            } catch (IOException e) {
+                System.out.println("An I/O Error Occurred");
+            }
         }
     }
 }
