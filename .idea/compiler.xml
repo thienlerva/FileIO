@@ -13,6 +13,7 @@
         <module name="h2db" />
         <module name="jms-activemq" />
         <module name="messaging-rabbitmq" />
+        <module name="PaginationSortingProject" />
         <module name="RealTimeChat" />
         <module name="Sonarqube" />
         <module name="Testing" />
@@ -29,6 +30,7 @@
       <module name="h2db" target="1.8" />
       <module name="jms-activemq" target="1.8" />
       <module name="messaging-rabbitmq" target="1.8" />
+      <module name="PaginationSortingProject" target="1.8" />
       <module name="RealTimeChat" target="1.8" />
       <module name="Sonarqube" target="1.8" />
       <module name="spring-basic-security" target="1.8" />
@@ -50,6 +52,7 @@
       <module name="ActiveMQ-sender" options="-parameters" />
       <module name="Audit" options="-parameters" />
       <module name="Email" options="-parameters" />
+      <module name="PaginationSortingProject" options="-parameters" />
       <module name="RealTimeChat" options="-parameters" />
       <module name="Sonarqube" options="-parameters" />
       <module name="SpringBootWeb" options="-parameters" />

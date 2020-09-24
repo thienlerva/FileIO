@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-receiver/ActiveMQ-receiver.iml" filepath="$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-receiver/ActiveMQ-receiver.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-sender/ActiveMQ-sender.iml" filepath="$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-sender/ActiveMQ-sender.iml" />
       <module fileurl="file://$PROJECT_DIR$/FileIO.iml" filepath="$PROJECT_DIR$/FileIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PaginationSortingProject/PaginationSortingProject.iml" filepath="$PROJECT_DIR$/../PaginationSortingProject/PaginationSortingProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/../RealTimeChatWebSocket/RealTimeChat/RealTimeChat.iml" filepath="$PROJECT_DIR$/../RealTimeChatWebSocket/RealTimeChat/RealTimeChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Sonarqube/Sonarqube.iml" filepath="$PROJECT_DIR$/../Sonarqube/Sonarqube.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Testing/Testing.iml" filepath="$PROJECT_DIR$/../Testing/Testing.iml" />

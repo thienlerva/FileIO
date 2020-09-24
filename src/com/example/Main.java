@@ -1,42 +1,64 @@
 package com.example;
 
+import javax.print.PrintService;
+import javax.print.PrintServiceLookup;
+import javax.print.ServiceUI;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
+    static List<String> fileTree = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        String geoserverUrl = "http://localhost:9191/geoserver";
-        String hostname = "nvay";
+      //printService();
 
-        boolean isNonFRA = geoserverUrl != null && geoserverUrl.contains(hostname);
 
-        System.out.println(isNonFRA);
+        String dirToList = System.getProperty("user.home") + File.separator + "Documents/testDir";
 
-        int i = 1;
-        Integer I = (Integer) i;
+        DirectoryTreeFS node = sortDir(dirToList);
+        System.out.println(node);
 
-        System.out.println(I);
+        listDirectory(dirToList, 0);
+        //fileTree.forEach(System.out::println);
+//        displayAll(new File(dirToList));
+//
+//        fileTree.forEach(System.out::println);
+//        System.out.println("-----------");
+//
+//        listFiles(dirToList);
 
-        List<String> listA = Arrays.asList("A", "C", "C");
-        List<String> listB = Arrays.asList("A", "B", "A");
+//        Files.walk(root.toPath())
+//                .filter(path -> !Files.isDirectory(path))
+//                .forEach(path -> System.out.println(path));
 
-        Set<String> setA = new HashSet<>(listA);
-        Set<String> setB = new HashSet<>(listB);
-        Set<String> results = listA.stream().filter(f -> !setB.contains(f)).collect(Collectors.toSet());
+//        Files.walk(Paths.get(dirToList))
+//                .filter(Files::isRegularFile)
+//                .forEach(f -> System.out.println(f.getFileName()));
 
-        System.out.println("testing");
-        System.out.println(results);
-
-        File[] directories = new File("/usr").listFiles(File::isDirectory);
-
-        List<File> files = Arrays.asList(directories);
-        List<String> fileList = new ArrayList<>();
-        for(File f : files) {
-            fileList.add(f.getAbsolutePath());
-        }
+//        List<String> listA = Arrays.asList("A", "C", "C");
+//        List<String> listB = Arrays.asList("A", "B", "A");
+//
+//        Set<String> setA = new HashSet<>(listA);
+//        Set<String> setB = new HashSet<>(listB);
+//        Set<String> results = listA.stream().filter(f -> !setB.contains(f)).collect(Collectors.toSet());
+//
+//        System.out.println("testing");
+//        System.out.println(results);
+//
+//        File[] directories = new File("/usr").listFiles(File::isDirectory);
+//
+//        List<File> files = Arrays.asList(directories);
+//        List<String> fileList = new ArrayList<>();
+//        for(File f : files) {
+//            fileList.add(f.getAbsolutePath());
+//        }
         //System.out.println(fileList);
 
         File file = new File("/Users/thienle/Documents/FileIO/FileFolde/file.txt");
@@ -50,7 +72,7 @@ public class Main {
         //System.out.println(createScript("/Users/thienle/Documents/FileIO/FileFolder/script7.sh") ? "script7.sh is created" : "scipt.sh is not crated");
 
         //byteArrayInputStream();
-        dataInputStreamDemo();
+        //dataInputStreamDemo();
         //dataInputStreamDemo2();
 
         byte b = 110;
@@ -62,11 +84,144 @@ public class Main {
 
         //DataOutputStream custOutput = Customer.createFile("customers.dat");
 
-        for(Customer person : customers) {
-            Customer.writeCustomerToFile(person, "customers.dat");
+//        for(Customer person : customers) {
+//            Customer.writeCustomerToFile(person, "customers.dat");
+//        }
+
+       // Customer.getFileInfo("customers.dat");
+    }
+
+    static List<String> displayAll(File path){
+
+        if(path.isFile()){
+            //System.out.println(path.getName());
+            fileTree.add(path.getName());
+        }else{
+            //System.out.println(path.getName());
+            fileTree.add("-" + path.getName());
+            File[] files = path.listFiles();
+            for(File dirOrFile: files){
+                displayAll(dirOrFile);
+            }
+        }
+        return fileTree;
+    }
+
+    static void displayTree(File path) {
+        File[] files = path.listFiles();
+        for (int i=0; i<files.length; i++) {
+
+        }
+    }
+
+    static void listFiles(String startDir) {
+        File dir = new File(startDir);
+        File[] files = dir.listFiles();
+
+        if (files != null && files.length > 0) {
+            for (File file : files) {
+
+                if (file.isDirectory()) {
+                    listFiles(file.getAbsolutePath());
+                } else {
+                    // We can use .length() to get the file size
+                    System.out.println(file.getName() + " (size in bytes: " + file.length()+")");
+                }
+            }
+        }
+    }
+
+    static List<DirectoryTreeFS> getTreeFS(String startDir) {
+        List<DirectoryTreeFS> parent = new ArrayList<>();
+        File dir = new File(startDir);
+        File[] files = dir.listFiles();
+
+        if (files != null && files.length > 0) {
+            for (File file : files) {
+
+            }
         }
 
-        Customer.getFileInfo("customers.dat");
+        return parent;
+    }
+
+    static void listDirectory(String dirPath, int level) {
+//        File dir = new File(dirPath);
+//        File[] firstLevelFiles = dir.listFiles();
+        File[] firstLevelFiles = sortedFiles(dirPath);
+        if (firstLevelFiles != null && firstLevelFiles.length > 0) {
+            for (File aFile : firstLevelFiles) {
+                for (int i = 0; i < level; i++) {
+                    System.out.print("\t");
+                    fileTree.add("\t");
+                }
+                if (aFile.isDirectory()) {
+                    System.out.println("[" + aFile.getName() + "]");
+                    fileTree.add("[" + aFile.getName() + "]");
+                    listDirectory(aFile.getAbsolutePath(), level + 1);
+                } else {
+                    System.out.println(aFile.getName());
+                    fileTree.add(aFile.getName());
+                }
+            }
+        }
+    }
+
+    static File[] sortedFiles(String dirPath) {
+
+        File dir = new File(dirPath);
+        File[] onlyFiles = dir.listFiles(File::isFile);
+        File[] onlyDir = dir.listFiles(File::isDirectory);
+
+        File[] result = new File[onlyFiles.length + onlyDir.length];
+        int count = 0;
+        for (int i=0; i<onlyFiles.length;i++) {
+            result[i] = onlyFiles[i];
+            count++;
+        }
+
+        for (int j = 0; j<onlyDir.length;j++) {
+            result[count++] = onlyDir[j];
+        }
+        return result;
+    }
+
+    static DirectoryTreeFS sortDir(String rootDir) {
+        File dir = new File(rootDir);
+        File[] files = dir.listFiles();
+        DirectoryTreeFS node = new DirectoryTreeFS();
+
+        if (files != null && files.length >0) {
+            node.directoryName = dir.getName();
+
+            for ( int i =0; i<files.length; i++) {
+                if (files[i].isFile()) {
+                    node.fileNames.add(files[i].getName());
+                } else if (files[i].isDirectory()) {
+                    node.children.add(files[i]);
+                }
+            }
+        }
+        return node;
+    }
+
+
+
+    static void printService() {
+        PrintService[] printServices = PrintServiceLookup
+                .lookupPrintServices(null, null);
+        PrintService defaultPrintService = PrintServiceLookup
+                .lookupDefaultPrintService();
+        PrintRequestAttributeSet attrib =
+                new HashPrintRequestAttributeSet();
+        PrintService selectedPrintService =
+                ServiceUI.printDialog(null, 150, 150,
+                        printServices, defaultPrintService, null, attrib);
+        if(selectedPrintService!=null)
+            System.out.println("selected printer:"
+                    +selectedPrintService.getName());
+        else
+            System.out.println("selection cancelled");
     }
 
     public static void byteArrayInputStream() {
@@ -376,5 +531,20 @@ public class Main {
                 System.out.println("An I/O Error Occurred");
             }
         }
+    }
+}
+
+class DirectoryTreeFS {
+    String directoryName;
+    List<String> fileNames = new ArrayList<>();
+    List<File> children = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "DirectoryTreeFS{" +
+                "directoryName='" + directoryName + '\'' +
+                ", fileNames=" + fileNames +
+                ", children=" + children +
+                '}';
     }
 }

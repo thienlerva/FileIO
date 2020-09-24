@@ -23,6 +23,7 @@
         <option value="$PROJECT_DIR$/../ActiveMQ-Sender-Receiver-Mircoservices/ActiveMQ-sender/pom.xml" />
         <option value="$PROJECT_DIR$/../jms-activemq/pom.xml" />
         <option value="$PROJECT_DIR$/../Sonarqube/pom.xml" />
+        <option value="$PROJECT_DIR$/../PaginationSortingProject/pom.xml" />
       </list>
     </option>
   </component>
